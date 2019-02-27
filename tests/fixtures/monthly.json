@@ -1,0 +1,37 @@
+{
+    "columns": [{
+            "type": "string",
+            "label": "Months"
+        },
+        {
+            "type": "number",
+            "label": "Sales"
+        },
+        {
+            "type": "number",
+            "label": "Expenses"
+        }
+    ],
+    "rows": [
+        ["Jan", 200, 80],
+        ["Feb", 234, 98],
+        ["Mar", 122, 224],
+        ["Apr", 206, 108]
+    ],
+    "options": {
+        "title": "Company Performance",
+        "hAxis": {
+            "title": "Month",
+            "minValue": "Jan",
+            "maxValue": "Apr"
+        },
+        "vAxis": {
+            "title": "",
+            "minValue": 0,
+            "maxValue": 200
+        },
+        "width": 900,
+        "height": 500,
+        "curveType": "function"
+    }
+}

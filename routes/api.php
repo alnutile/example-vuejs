@@ -18,5 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get("data", function (Request $request) {
-    return [];
+    $range = $request->get('range');
+    $data = \File::get(base_path("tests/fixtures/{$range}.json"));
+    return $data;
 });

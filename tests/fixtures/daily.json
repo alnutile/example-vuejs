@@ -1,0 +1,37 @@
+{
+    "columns": [{
+            "type": "string",
+            "label": "Day"
+        },
+        {
+            "type": "number",
+            "label": "Sales"
+        },
+        {
+            "type": "number",
+            "label": "Expenses"
+        }
+    ],
+    "rows": [
+        ["Mon", 100, 40],
+        ["Tues", 117, 46],
+        ["Wed", 66, 112],
+        ["Thur", 103, 54]
+    ],
+    "options": {
+        "title": "Company Performance",
+        "hAxis": {
+            "title": "",
+            "minValue": "Mon",
+            "maxValue": "Thur"
+        },
+        "vAxis": {
+            "title": "",
+            "minValue": 0,
+            "maxValue": 200
+        },
+        "width": 900,
+        "height": 500,
+        "curveType": "function"
+    }
+}
