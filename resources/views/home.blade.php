@@ -5,7 +5,9 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Dashboard</div>
-                <dashboard-wrapper></dashboard-wrapper>
+                <dashboard-wrapper>
+                    <dashboard-buttons></dashboard-buttons>
+                </dashboard-wrapper>
             </div>
         </div>
     </div>
