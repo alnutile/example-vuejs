@@ -1,5 +1,6 @@
 {
-    "columns": [{
+    "columns": [
+        {
             "type": "string",
             "label": "Months"
         },
@@ -13,10 +14,26 @@
         }
     ],
     "rows": [
-        ["Jan", 200, 80],
-        ["Feb", 234, 98],
-        ["Mar", 122, 224],
-        ["Apr", 206, 108]
+        [
+            "Jan",
+            200,
+            80
+        ],
+        [
+            "Feb",
+            234,
+            98
+        ],
+        [
+            "Mar",
+            122,
+            224
+        ],
+        [
+            "Apr",
+            206,
+            108
+        ]
     ],
     "options": {
         "title": "Company Performance",
@@ -33,5 +50,9 @@
         "width": 900,
         "height": 500,
         "curveType": "function"
+    },
+    "stats": {
+        "foo": 40,
+        "bar": 70
     }
 }

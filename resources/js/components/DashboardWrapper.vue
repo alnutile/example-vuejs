@@ -5,12 +5,15 @@
       <div class="row">
         <dashboard-buttons
           @change_range="rangeChosen"
-          class="col-12 text-center mb-5"
+          class="col-12 text-center mb-2"
           :range="range"
         ></dashboard-buttons>
       </div>
       <div class="row text-center">
         <dashboard-chart class="col-12" :charts="charts"></dashboard-chart>
+      </div>
+      <div>
+        <stats :stats="charts.stats"></stats>
       </div>
     </div>
   </section>
@@ -19,9 +22,11 @@
 <script>
 import DashboardButtons from "./DashboardButtons";
 import DashboardChart from "./DashboardChart";
+import Stats from "./Stats";
 export default {
   components: {
     DashboardButtons,
+    Stats,
     DashboardChart
   },
   created() {

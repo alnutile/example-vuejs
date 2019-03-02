@@ -1,5 +1,6 @@
 {
-    "columns": [{
+    "columns": [
+        {
             "type": "string",
             "label": "Day"
         },
@@ -13,10 +14,26 @@
         }
     ],
     "rows": [
-        ["Mon", 100, 40],
-        ["Tues", 117, 46],
-        ["Wed", 66, 112],
-        ["Thur", 103, 54]
+        [
+            "Mon",
+            100,
+            40
+        ],
+        [
+            "Tues",
+            117,
+            46
+        ],
+        [
+            "Wed",
+            66,
+            112
+        ],
+        [
+            "Thur",
+            103,
+            54
+        ]
     ],
     "options": {
         "title": "Company Performance",
@@ -33,5 +50,9 @@
         "width": 900,
         "height": 500,
         "curveType": "function"
+    },
+    "stats": {
+        "foo": 20,
+        "bar": 30
     }
 }
