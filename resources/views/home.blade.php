@@ -6,7 +6,6 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
                 <dashboard-wrapper>
-                    <dashboard-buttons></dashboard-buttons>
                 </dashboard-wrapper>
             </div>
         </div>

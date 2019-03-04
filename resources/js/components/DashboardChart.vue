@@ -12,10 +12,10 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  props: ["charts"],
-  data() {
-    return {};
+  computed: {
+    ...mapState(["charts"])
   }
 };
 </script>

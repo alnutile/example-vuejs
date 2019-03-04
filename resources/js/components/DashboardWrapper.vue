@@ -23,25 +23,37 @@
 import DashboardButtons from "./DashboardButtons";
 import DashboardChart from "./DashboardChart";
 import Stats from "./Stats";
+
+import { mapMutations, mapState } from "vuex";
+
 export default {
   components: {
     DashboardButtons,
     Stats,
     DashboardChart
   },
+  computed: {
+    ...mapState(["range"])
+  },
+  watch: {
+    range(newValue, old) {
+      console.log("old", old);
+      console.log("newValue", newValue);
+      this.getData();
+    }
+  },
   created() {
     this.getData();
   },
   data() {
     return {
-      range: "daily",
       charts: {}
     };
   },
   methods: {
+    ...mapMutations(["chartsData"]),
     rangeChosen(range) {
       console.log("Got Event for Range Change", range);
-      this.range = range;
       this.getData();
     },
     getData() {
@@ -49,6 +61,7 @@ export default {
         .then(results => {
           console.log(results);
           this.charts = results.data;
+          this.chartsData(results.data);
         })
         .catch(err => {
           console.log(err);

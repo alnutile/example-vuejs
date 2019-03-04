@@ -23,6 +23,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('dashboard-wrapper', require('./components/DashboardWrapper.vue').default);
+Vue.component('nav-area', require('./components/Nav.vue').default);
 
 
 import BootstrapVue from 'bootstrap-vue'
@@ -44,6 +45,33 @@ Vue.filter('capitalize', function (value) {
     return value.charAt(0).toUpperCase() + value.slice(1)
 })
 
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+    state: {
+        charts: {},
+        range: "daily"
+    },
+    getters: {
+        range(state) {
+            return state.range;
+        }
+    },
+    mutations: {
+        chartsData(state, charts) {
+            console.log("charts into vuex", charts);
+            state.charts = charts
+        },
+        rangePicker(state, range) {
+            console.log('vuex choose range', range);
+            state.range = range;
+        }
+    }
+})
+
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store: store //or just store
 });
