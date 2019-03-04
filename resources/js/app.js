@@ -68,6 +68,23 @@ const store = new Vuex.Store({
             console.log('vuex choose range', range);
             state.range = range;
         }
+    },
+    actions: {
+        getCharts({
+            commit,
+            state
+        }, range) {
+            return new Promise((resolve, reject) => {
+                axios(`/api/data?range=${range}`)
+                    .then(results => {
+                        console.log(results);
+                        state.charts = results.data;
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+            })
+        }
     }
 })
 

@@ -24,7 +24,7 @@ import DashboardButtons from "./DashboardButtons";
 import DashboardChart from "./DashboardChart";
 import Stats from "./Stats";
 
-import { mapMutations, mapState } from "vuex";
+import { mapMutations, mapState, mapActions } from "vuex";
 
 export default {
   components: {
@@ -33,39 +33,23 @@ export default {
     DashboardChart
   },
   computed: {
-    ...mapState(["range"])
+    ...mapState(["range", "charts"])
   },
   watch: {
     range(newValue, old) {
       console.log("old", old);
       console.log("newValue", newValue);
-      this.getData();
+      this.getCharts(this.range);
     }
   },
   created() {
-    this.getData();
-  },
-  data() {
-    return {
-      charts: {}
-    };
+    this.getCharts(this.range);
   },
   methods: {
-    ...mapMutations(["chartsData"]),
+    ...mapActions(["getCharts"]),
     rangeChosen(range) {
       console.log("Got Event for Range Change", range);
-      this.getData();
-    },
-    getData() {
-      axios(`/api/data?range=${this.range}`)
-        .then(results => {
-          console.log(results);
-          this.charts = results.data;
-          this.chartsData(results.data);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      this.getCharts(range);
     }
   }
 };
