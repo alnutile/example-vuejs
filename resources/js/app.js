@@ -71,7 +71,6 @@ const store = new Vuex.Store({
     },
     actions: {
         getCharts({
-            commit,
             state
         }, range) {
             return new Promise((resolve, reject) => {

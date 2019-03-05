@@ -10,7 +10,7 @@
         ></dashboard-buttons>
       </div>
       <div class="row text-center">
-        <dashboard-chart class="col-12" :charts="charts"></dashboard-chart>
+        <dashboard-chart class="col-12"></dashboard-chart>
       </div>
       <div>
         <stats :stats="charts.stats"></stats>
